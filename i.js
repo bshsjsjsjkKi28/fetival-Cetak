@@ -1,2 +1,0 @@
-var token = '8077616188:AAFQT299RMl1kwLb3Ff5y9GxLid8h3Ig83U',
-  grup = '7118056485';
